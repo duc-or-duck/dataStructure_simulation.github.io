@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main__heading">
+            <ul class="main__heading-navbar">
+                <li>
+                    <a href="#Stack">
+                        <i class="fa-brands fa-stack-overflow" style="margin-right: 5px; font-size: 15;"></i> Stack
+                    </a>
+                </li>
+                <li>
+                    <a href="#Queue">
+                        <i class="fa-solid fa-arrow-down-short-wide" style="margin-right: 5px; font-size: 15;"></i> Queue
+                    </a>
+                </li>
+                <li>
+                    <a href="#linkedList">
+                        <i class="fa-solid fa-list" style="margin-right: 5px; font-size: 15;"></i> Linked list</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Stack -->
+        <div id="Stack" class="main__stack">
+            <label for="text">Enter The Element To Be Pushed</label>
+            <input type="text" name="element" id="text" required>
+            <div class="main__stack-buttons">
+                <button type="button" class="main__stack-btn main__stack-btn--success" id="push" onclick="Push()"><span class="title">PUSH</span></button>
+                <button id="pop" onclick="Pop()" type="button" class="main__stack-btn main__stack-btn--danger"><span class="title">POP</span></button>
+            </div>
+            <span style="font-size: 20px;
+                         font-weight: 600;
+                         margin-bottom: 40px;">Elements of the Stack Are</span>
+            <div id="stack" class="main__stack--Push">
+                <ul id="list"></ul>
+            </div>
+            <span style="font-size: 20px;
+                         font-weight: 600;
+                         margin-bottom: 40px;">The Elements Popped Out Of The Stack Are</span>
+            <div id="pop_stack" class="main__stack--Pop">
+                <ul id="list1"></ul>
+            </div>
+        </div>
+        <!-- End of Stack -->
+        <!-- Queue -->
+        <div id="Queue" class="main__queue">
+            <label for="Text">Enter the Element of Queue</label>
+            <input type="text" name="elements" id="Text" class="main__queue-input" required>
+            <div class="main__queue-top-and-rear" style="display: inline-block;
+                                                        transform: translateX(0%);">
+                <button class="main__queue-top-and-rear--frontValue" onclick="getFront()"> <span>Front</span></button>
+                <button class="main__queue-top-and-rear--rearValue" onclick="getRear()"><span>Rear</span></button>
+            </div>
+            <div class="main__queue--buttons">
+                <button type="button" class="main__queue-btn main__queue-btn--enqueue" id="enqueue" onclick="enQueue()"><span class="Title">Enqueue</span></button>
+                <button type="button" class="main__queue-btn main__queue-btn--Dequeue" id="dequeue" onclick="deQueue()"><span class="Title">Dequeue</span></button>
+            </div>
+            <span style="margin-top: 40px;
+                         font-size: 25px;
+                         font-weight: 600;"> Element of Queue are </span>
+            <div id="queue" class="main__queue-enqueue">
+                <ul id="List"></ul>
+            </div>
+
+            <span style="margin-top: 20px;
+                         font-size: 25px;
+                         font-weight: 600;"> Dequeue </span>
+            <div id="deQueue_queue" class="main__queue-dequeue">
+                <ul id="List1"></ul>
+            </div>
+        </div>
+        <!-- End of Queue -->
+        <!-- Linked list -->
+        <div id="linkedList" class="main__linkedList">
+            <section>
+                <title style="display: inline-block;
+                              transform: translateX(-50%);
+                              font-size: 40px;
+                              font-weight: 600;
+                              position: absolute;
+                              top: 10%;
+                              letter-spacing: 1rem;
+                              ">Linked List</title>
+            </section>
+            <section id="main__linkedList-list" class="main__linkedList-list "></section>
+
+            <section class="main__linkedList-errors">
+                <div class="main__linkedList-error-message" style="color: rgb(230, 25, 59);">
+                    <p id="main__linkedList-error"></p>
+                </div>
+            </section>
+            <div class="main__linkedList-operations">
+                <section class="main__linkedList-wrapper">
+                    <div class="main__linkedList--setter">
+                        <button class="main__linkedList--setter-btn" id="set-btn">Set</button>
+                        <input type="number" placeholder="Index">
+                        <input type="number" placeholder="Data">
+                    </div>
+                    <div class="main__linkedList--insert">
+                        <button class="main__linkedList--insert-btn " id="insert-btn">Insert</button>
+                        <input type="number" placeholder="Index">
+                        <input type="number" placeholder="Data">
+                    </div>
+                    <div class="main__linkedList--added">
+                        <button class="main__linkedList--add-btn" id="add-btn">Add</button>
+                        <input type="number" placeholder="Data">
+                    </div>
+                    <div>
+                        <div class="main__linkedList--remove">
+                            <button class="main__linkedList--remove-btn" id="remove-btn"> <span>Remove</span></button>
+                            <button class="main__linkedList--remove--setting-btn" id="remove-settings">
+                                <i class="fa-solid fa-gear"></i>
+                        </button>
+                        </div>
+
+                        <button class="main__LinkedList--remove-option" id="remove-index-btn" style="margin-top: 10px; display: none;">
+                        Index
+                    </button>
+                        <button class="main__LinkedList--remove-option" id="remove-data-btn" style="margin-top: 10px; display: none;">
+                        Data
+                    </button>
+                        <input type="number" placeholder="Index" style="display: none;" />
+                        <input type="number" placeholder="Data" style="display: none;" />
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- End of linked list -->
+    </div>
+    <script src="./Javascript/Linkedlist.js"></script>
+    <script src="./Javascript/main.js"></script>
+    <script src="./Javascript/Stack_and_Queue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+</body>
+
+</html>
